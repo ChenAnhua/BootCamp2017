@@ -9,6 +9,8 @@ This scrip is for unit testing problem set
 
 """
 
+# for problem 1, please see the test_solution.py
+
 
 
 
