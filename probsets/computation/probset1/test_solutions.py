@@ -74,35 +74,48 @@ def test_complex_sub(set_up_complex_nums):
 def test_complex_conjugate(set_up_complex_nums):
     number_1, number_2, number_3 = set_up_complex_nums
     assert number_1.conjugate() == soln.ComplexNumber(1, -2)
+    assert number_2.conjugate() == soln.ComplexNumber(5, -5)
+    assert number_3.conjugate() == soln.ComplexNumber(2, -9)
 
 def test_complex_norm(set_up_complex_nums):
     number_1, number_2, number_3 = set_up_complex_nums
     assert number_1.norm() == 5**0.5
+    assert number_2.norm() == 5*2**0.5
+    assert number_3.norm() == 85**0.5
 
-# not resolved
 def test_complex_equal(set_up_complex_nums):
     number_1, number_2, number_3 = set_up_complex_nums
     assert (number_1  == number_2) == False
+    assert (number_1  == number_3) == False
+    assert (number_2  == number_3) == False
+    assert (number_3  == number_3) == True
 
 def test_complex_string(set_up_complex_nums):
     number_1, number_2, number_3 = set_up_complex_nums
     assert str(number_1) == "1+2i"
+    assert str(number_2) == "5+5i"
+    assert str(number_3) == "2+9i"
+
 
 def test_complex_truediv(set_up_complex_nums):
     number_1, number_2, number_3 = set_up_complex_nums
     assert (number_1/number_2) == soln.ComplexNumber(0.3, 0.1)
+    assert (number_1/number_1) == soln.ComplexNumber(1.0, 0)
     with pytest.raises(Exception) as excinfo:
         (number_1/(number_2 - number_2))
     assert excinfo.typename == 'ValueError'
     assert excinfo.value.args[0] == "Cannot divide by zero"
-    
-
-
-
-
-
-
-
 
 
 # Problem 4: Write test cases for the Set game.
+def test_setgame():
+    
+    assert soln.setgame("")
+
+
+
+
+
+
+
+

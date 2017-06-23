@@ -86,3 +86,9 @@ class ComplexNumber(object):
                                                                 abs(self.imag))
 
 # Problem 5: Write code for the Set game here
+#def setgame(filename):
+    
+    
+    
+    
+#    return (sets)
