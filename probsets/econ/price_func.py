@@ -1,16 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-This is script defines price functions (wage and interset rate) based on firm 
+This is script defines steady state price functions (wage and interset rate) based on firm
 optimization
 
 """
 
-def wage (b2val, b3val, Aval, alphaval):
-    w = (1 - alphaval)*Aval*((b2val +b3val)/2)**alphaval
+def wage_ss (K, L, Aval, alphaval):
+    w = (1 - alphaval)*Aval*((K/L)**alphaval)
     return w
 
-def int_rate (b2val, b3val, Aval, alphaval, deltaval):
-    r = (alphaval)*Aval*(2/(b2val +b3val))**(1-alphaval) - deltaval
+def int_rate_ss (K, L, Aval, alphaval, deltaval):
+    r = alphaval*Aval*(L/K)**(1-alphaval) - deltaval
     return r
-
-
