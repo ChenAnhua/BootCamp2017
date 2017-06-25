@@ -19,5 +19,5 @@ I. steady state equilibrium
 II. transitional state equilibrium
    
    euler_func.py  ->  HHsolution_func.py  ->  ]
-                                              ] -> TSconvergence_func.py 
+                                              ] -> TSconvergence_func.py  ->   3period_OG_execution.py
                         timepath_func.py  ->  ]
