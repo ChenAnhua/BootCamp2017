@@ -1,8 +1,27 @@
 '''
 
 This script is for solving the household situation based on the assumed
-capital/wage/interest rate time path. It will return an array of errors
-between time path capital and capital that satisfies the equilibrium condition
+capital/wage/interest rate time path. It will return an array of
+CALCULATED time path of  capital that satisfies the equilibrium condition
+
+funciton input:
+
+timepathval                      : the given timepath of K
+bvec_init_val                    : initial savings guess
+T                                : number of periods included in the model to calculate the time path
+m                                : number of periods past the period when steady state is reached
+beta                             : impatiency discount factor in one period
+alpha                            : share of capital in income
+delta                            : depreciation rate in one period
+sigma                            : the risk aversion of CRRA utility function
+A                                : TFP
+nvec                             : vector of labor supply
+bvec_ss                          : vector of steady state savings
+model_choice                     : whether it's steady state (SS) or not
+
+function output
+
+saving_mat                       : an array of calculated savings and aggregate capital
 
 '''
 import numpy as np
@@ -52,6 +71,10 @@ def HHsol(timepathval, *args):
         r2 = tp[i , 3]
         r3 = tp[i + 1, 3]
         ts_args = (w1, w2, w3, r2, r3,  beta, alpha, delta, sigma, A, nvec, model_choice)
+        '''
+        we call in EulerError function from euler_func.py
+        
+        '''
         bvec_ts = opt.root(ef.EulerError, bvec_init_val, args = (ts_args))
         saving_mat[i , 0] = bvec_ts.x[0]
         saving_mat[i + 1, 1] = bvec_ts.x[1]

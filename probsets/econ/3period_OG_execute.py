@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 '''
 This script is to derive the results of steady state/transitional state equilibrium
-of a 3 period OG model
+of a 3 period OG model. The general structure of the file is as following:
+1) We import packages and functions first
+2) We set the initialization of steady state and transitional state parameters
+3) We derive results of steady state equilibrium
+4) We then derive results of transitional state equilibrium
 
 '''
 #import pacakges
@@ -20,6 +24,9 @@ import TSconvergence_func as tcf
 
 # Initialization
 '''
+
+Steady state parameters:
+
 yrs_live    : years of an agent's life expectancy
 S           : number of periods in an agent's life
 alpha       : share of capital in income
@@ -30,7 +37,14 @@ A           : TFP
 delta_annual: annual depreciation rate
 delta       : depreciation rate in one period
 sigma       : the risk aversion of CRRA utility function
+bvec_init   : initial savings for equilibrium calculation
 
+transitional state parameters:
+T           : number of periods included in the model to calculate the time path
+m           : number of periods past the period when steady state is reached
+K_init      : initial value of aggregate capital stock
+tol         : tolerance for determining the TPI convergence
+xi          : time path updating parameters
 
 '''
 # initialization for steady state model
@@ -56,6 +70,11 @@ xi          = 0.9
 
 
 # derive the steady state equilibrium
+'''
+
+For details of EulerError function , please refer to the euler_func.py file
+
+'''
 ss_args = (1, 1, 1, 1, 1,  beta, alpha, delta, sigma, A, nvec, "SS")
 report_ss = opt.root(ef.EulerError, bvec_init, args = (ss_args))
 print(report_ss)
@@ -77,12 +96,12 @@ print("Steady state capital: ", K_ss)
 print("Steady state labor: ", L_ss)
 
 # derive the transitional state equlibrium
-# we update the bvec_init and K_init first
+# we update the bvec_init and K_init first as in question 3
 bvec_init = bvec_ss*np.array([0.8 , 1.1])
 K_init    = bvec_init.sum()
 # we firstly derive the initial time path
 timepath_init = tf.timepath(0, K_init, K_ss, T, A, alpha, delta, nvec, m, "linear")
-# then we derive the time path
+# then we derive the converged time path
 tpi_result = tcf.tpi(timepath_init, xi, tol, bvec_init, T, m, beta, alpha, delta, sigma, A, nvec, bvec_ss, K_ss, "TS")
 K_path = tpi_result[0][:, [0 , 1]]
 w_path = tpi_result[0][:, [0 , 2]]
@@ -92,8 +111,7 @@ r_path = tpi_result[0][:, [0 , 3]]
 K_fig = plt.figure()
 plt.plot(K_path[: , 0], K_path[: , 1])
 plt.xlabel('periods')
-
-
-
-
-# derive the transitional state equilibrium
+plt.ylabel('aggregate capital stock')
+plt.title('Time path of aggregate capital stock')
+plt.show()
+# also return the first period when steady state is reached (1e-4)

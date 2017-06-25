@@ -33,6 +33,14 @@ import utility_func as uf
 def EulerError(bvec, *args):
     b2val, b3val = bvec
     w1, w2, w3, r2, r3, beta, alpha, delta, sigma, A, nvec, model_choice = args
+    '''
+    The structure of the Euler function is as following:
+    1) We define the aggregate variable function
+    2) We then define the price function based on aggregate variable
+    3) We then define consumption function based on price function
+    4) We then define marginal utility functions based on consumption function
+    5) We finally derive the Euler equation error based on marginal utility function
+    '''
     K = af.capital(bvec)
     L = af.capital(nvec)
     if (model_choice == "SS"):

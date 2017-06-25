@@ -1,8 +1,30 @@
 '''
 
 This script is for function to test the convergence TPI method
-The input includes the initial timepath, xi, tolerance, and all the args passed
-to HHsolution function
+
+function input:
+
+tp_init                          : initial timepath derived
+xival                            : time path updating parameter
+tolval                           : tolerance to inidcate the convergence of TPI method
+timepathval                      : the given timepath of K
+bvec_init_val                    : initial savings guess
+T                                : number of periods included in the model to calculate the time path
+m                                : number of periods past the period when steady state is reached
+beta                             : impatiency discount factor in one period
+alpha                            : share of capital in income
+delta                            : depreciation rate in one period
+sigma                            : the risk aversion of CRRA utility function
+A                                : TFP
+nvec                             : vector of labor supply
+bvec_ss                          : vector of steady state savings
+K_ss                             : steady state capital stock
+model_choice                     : whether it's steady state (SS) or not
+
+function output:
+(tp, saving_HH)                  : time path tuple of aggregate variables
+
+
 
 '''
 import numpy as np
@@ -17,9 +39,19 @@ import HHsolution_func as hf
 
 def tpi(tp_init, xival, tolval, *args):
     bvec_init_val, T, m, beta, alpha, delta, sigma, A, nvec, bvec_ss, K_ss, model_choice = args
+    '''
+    We will firstly derive the epsilon between the initial K time path and caluclated K path (K prime)
+    and decide whether it already statisfies the tolerance condition
+
+    '''
     saving_HH_init  = hf.HHsol(tp_init, bvec_init_val, T, m, beta, alpha, delta, sigma, A, nvec, bvec_ss ,"TS")
     epsilon_init = sum(((tp_init[: -m, 1] - saving_HH_init[: -m, 2])/tp_init[: -m, 1])**2)
     if epsilon_init > tolval:
+        '''
+        if the initial epsilon is larger than the tolerance
+        we update the time path and calculated time path and recalculate the epsilon
+
+        '''
         tp = tp_init
         saving_HH = saving_HH_init
         epsilon = epsilon_init
