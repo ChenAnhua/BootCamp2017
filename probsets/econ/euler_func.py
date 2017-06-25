@@ -1,6 +1,26 @@
 '''
 
 This script is for function to derive the error of Euler equation of equilibrium
+for both steady state and transitional state
+
+function input:
+bvec                  : savings
+nvec                  : vector of labor supply
+w1                    : period 1 wage
+w2                    : period 2 wage
+w3                    : period 3 wage
+r2                    : period 2 interest rate
+r3                    : period 3 interest rate
+beta                  : discount factor
+alpha                 : capital income share
+delta                 : depreciation rate
+sigma                 : risk aversion
+A                     : TFP
+model_choice          : indicator of whether it's a steady state equilibrium
+
+funciton output:
+return the error of the Euler function
+
 
 '''
 import numpy as np
@@ -16,9 +36,9 @@ def EulerError(bvec, *args):
     K = af.capital(bvec)
     L = af.capital(nvec)
     if (model_choice == "SS"):
-        w = pf.wage_ss(K, L, A, alpha)
+        w = pf.wage(K, L, A, alpha)
         w1= w2 = w3 = w
-        r = pf.int_rate_ss(K, L, A, alpha, delta)
+        r = pf.int_rate(K, L, A, alpha, delta)
         r2= r3 = r
     c1  = cf.consump1(bvec, w1, nvec)
     c2  = cf.consump2(bvec, r2, w2, nvec)

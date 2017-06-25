@@ -16,9 +16,9 @@ import euler_func as ef
 
 def HHsol(timepathval, *args):
     tp = timepathval
-    bvec_init_val, T, beta, alpha, delta, sigma, A, nvec, bvec_ss, model_choice = args
+    bvec_init_val, T, m, beta, alpha, delta, sigma, A, nvec, bvec_ss, model_choice = args
     # we will firstly create an array to store the calclated savings
-    saving_mat = np.zeros([T, 3])
+    saving_mat = np.zeros([T + m, 3])
     saving_mat[0, 0:-1] = bvec_init_val
 
     # 1. we firslty need to calculate out the b(3,2)
@@ -45,7 +45,7 @@ def HHsol(timepathval, *args):
     saving_mat[1 , 1] = b32
 
     # 2. we then calculate the HH solution within the period
-    for i in np.nditer(tp[1: -1, 0]):
+    for i in np.nditer(tp[0: -2, 0].astype("int")):
         w1 = tp[i - 1 , 2]
         w2 = tp[i , 2]
         w3 = tp[i + 1 , 2]
@@ -57,7 +57,7 @@ def HHsol(timepathval, *args):
         saving_mat[i + 1, 1] = bvec_ts.x[1]
 
     # 3. we also need to calculate the b2T
-    saving_mat[T-1 , 0] = bvec_ss[0]
+    #saving_mat[T-1 , 0] = bvec_ss[0]
 
     #now we will construct the ts_error
     saving_mat[: , 2] = saving_mat[: , 0] + saving_mat[: , 1]
