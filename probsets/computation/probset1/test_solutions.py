@@ -41,7 +41,7 @@ def test_operator():
         soln.operator(1, 3, "&")
     assert excinfo.typename == 'ValueError'
     assert excinfo.value.args[0] == "Oper can only be: '+', '/', '-', or '*'"
-    
+
 # Problem 3: Finish testing the complex number class
 @pytest.fixture
 def set_up_complex_nums():
@@ -109,13 +109,5 @@ def test_complex_truediv(set_up_complex_nums):
 
 # Problem 4: Write test cases for the Set game.
 def test_setgame():
-    
+
     assert soln.setgame("")
-
-
-
-
-
-
-
-

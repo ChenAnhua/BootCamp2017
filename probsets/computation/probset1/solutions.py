@@ -86,9 +86,24 @@ class ComplexNumber(object):
                                                                 abs(self.imag))
 
 # Problem 5: Write code for the Set game here
-#def setgame(filename):
-    
-    
-    
-    
-#    return (sets)
+def setgame(filename):
+    # we will firstly read in the text file
+    with open('hands/filename.txt') as f:
+    lines = f.read().splitlines()
+    if len(lines) != 12:
+        raise ValueError("Wrong card numbers!")
+    if len(lines) != len(set(lines)):
+        raise ValueError("Duplicate cards!")
+    if len(min(lines3, key=len)) == len(max(lines3, key=len)) == 4:
+        lines = list(map(int, lines))
+    else:
+        raise ValueError("Invalid cards!")
+    if
+
+
+
+
+
+
+
+    return (sets)

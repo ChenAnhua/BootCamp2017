@@ -6,7 +6,7 @@ Created on Wed Jun 21 21:05:46 2017
 """
 #import numpy as np
 import calculator as cal
-import box 
+import box
 import random
 
 
@@ -70,7 +70,7 @@ def newfunc(a, b):
 print(newfunc(3, 4))
 
 
-#prob4 
+#prob4
 
 # shut the box game
 # -*- coding: utf-8 -*-
@@ -103,7 +103,7 @@ while stopper:
     stopper = box.isvalid(roll, remaining_list)
     if stopper:
         player_input = input("Numbers to eliminate: ")
-        elimination = box.parse_input(player_input, remaining_list) 
+        elimination = box.parse_input(player_input, remaining_list)
         while not elimination or sum(elimination) != roll:
             print("Invalid output!")
             player_input = input("Numbers to eliminate: ")
@@ -117,9 +117,3 @@ score = sum(remaining_list)
 print("\n Score for ", player_name, ": ", score)
 if score == 0:
     print("Congrats! You shut the box!")
-
-
-
-
-
-
