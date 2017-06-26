@@ -98,7 +98,6 @@ def setgame(filename):
         lines = list(map(int, lines))
     else:
         raise ValueError("Invalid cards!")
-    if
 
 
 

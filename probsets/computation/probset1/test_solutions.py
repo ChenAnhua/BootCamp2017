@@ -109,5 +109,8 @@ def test_complex_truediv(set_up_complex_nums):
 
 # Problem 4: Write test cases for the Set game.
 def test_setgame():
-
+    with pytest.raises(Exception) as excinfo:
+        soln.setgame(, 2, 3)
+    assert excinfo.typename == 'ValueError'
+    assert excinfo.value.args[0] == "Oper should be a string"
     assert soln.setgame("")
