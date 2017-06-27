@@ -9,6 +9,7 @@ import solutions as soln
 import pytest
 import math
 
+
 # Problem 1: Test the addition and fibonacci functions from solutions.py
 def test_addition():
     assert soln.addition(3, 4) == 7, "Addition failed on positive integers"
@@ -110,7 +111,29 @@ def test_complex_truediv(set_up_complex_nums):
 # Problem 4: Write test cases for the Set game.
 def test_setgame():
     with pytest.raises(Exception) as excinfo:
-        soln.setgame(, 2, 3)
+        soln.setgame("hands/setgameTestcase2.txt")
     assert excinfo.typename == 'ValueError'
-    assert excinfo.value.args[0] == "Oper should be a string"
-    assert soln.setgame("")
+    assert excinfo.value.args[0] == "Wrong card numbers!"
+    with pytest.raises(Exception) as excinfo:
+        soln.setgame("hands/setgameTestcase3.txt")
+    assert excinfo.typename == 'ValueError'
+    assert excinfo.value.args[0] == "Invalid cards!"
+    with pytest.raises(Exception) as excinfo:
+        soln.setgame("hands/setgameTestcase4.txt")
+    assert excinfo.typename == 'ValueError'
+    assert excinfo.value.args[0] == "Duplicate cards!"
+    with pytest.raises(Exception) as excinfo:
+        soln.setgame("hands/setgameTestcase5.txt")
+    assert excinfo.typename == 'ValueError'
+    assert excinfo.value.args[0] == "Invalid categories!"
+    assert  (((),
+              (0, 1, 2),
+              (0, 3, 4),
+              (0, 5, 6),
+              (0, 7, 8),
+              (0, 10, 11),
+              (1, 8, 10),
+              (1, 9, 11),
+              (2, 7, 11),
+              (2, 8, 9),
+              (7, 9, 10))== soln.setgame("hands/setgameTestcase1.txt"))

@@ -4,7 +4,8 @@
 <Date>
 """
 import math
-
+import numpy as np
+import itertools as it
 # Problem 1 Write unit tests for addition().
 # Be sure to install pytest-cov in order to see your code coverage change.
 
@@ -88,21 +89,30 @@ class ComplexNumber(object):
 # Problem 5: Write code for the Set game here
 def setgame(filename):
     # we will firstly read in the text file
-    with open('hands/filename.txt') as f:
-    lines = f.read().splitlines()
+    with open(filename) as f:
+        lines = f.read().splitlines()
     if len(lines) != 12:
         raise ValueError("Wrong card numbers!")
     if len(lines) != len(set(lines)):
         raise ValueError("Duplicate cards!")
-    if len(min(lines3, key=len)) == len(max(lines3, key=len)) == 4:
-        lines = list(map(int, lines))
+    if len(min(lines, key=len)) == len(max(lines, key=len)) == 4:
+        lines = lines
     else:
         raise ValueError("Invalid cards!")
+    # we will transform the list of strings to an array of integers
+    lines_mat = np.zeros([12, 4])
+    for i in range(0, 12):
+        a = np.array([int(j) for j in str(lines[i])])
+        lines_mat[i , :] = a
+    if np.array(np.unique(lines_mat)) not in np.array([0,1,2]):
+        raise ValueError("Invalid categories!")
 
+    # we will now work out the set game based on lines_mat
+    card_result = ((),)
+    for c in list(it.combinations(range(0,12), 3)):
+        result = lines_mat[c, : ].sum(axis = 0)
+        remain = np.remainder(result, np.array([3, 3, 3, 3]))
+        if all(remain == np.array([0, 0, 0, 0])):
+            card_result = card_result + (c, )
 
-
-
-
-
-
-    return (sets)
+    return (card_result)
