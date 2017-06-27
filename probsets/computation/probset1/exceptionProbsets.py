@@ -3,6 +3,9 @@ def arithmagic():
                        "digits differ by 2 or more: ")
     if len(step_1) != 3:
         raise ValueError('not a 3-digit number')
+    elif abs(int(step_1[0])-int(step_1[2])) >=2:
+        raise ValueError('first and last digit differ larger than or equal to 2')
+
     step_2 = input("Enter the reverse of the first number, obtained "
                        "by reading it backwards: ")
     if step_2 != 1/step_1:
@@ -19,6 +22,19 @@ def arithmagic():
     print str(step_3) + " + " + str(step_4) + " = 1089 (ta-da!)"
 
 
+from random import choice
+def random_walk(max_iters=1e12):
+    try:
+        walk = 0
+        direction = [1, -1]
+        for i in xrange(int(max_iters)):
+            walk += choice(direction)
+    except: KeyboardInterrupt:
+        print('Process interrupted at iteration i')
+    else:
+        print('Process completed')
+    finally:
+        return walk
 
 
 class ContentFilter():
