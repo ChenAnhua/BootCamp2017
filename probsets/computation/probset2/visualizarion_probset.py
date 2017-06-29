@@ -80,10 +80,29 @@ mlbfig
 
 # problem 4
 year, magnitude, longitude, latitude = np.load("earthquakes.npy").T
-plt.scatter(longitude, latitude, s = magnitude, alpha =0.2)
-plt.axis("equal")
+
+plt.hist(year, bins = range(2000, 2011))
+plt.xlabel("year")
+plt.ylabel("number of earthquake")
+plt.title("Annual number of earthquakes")
 plt.show()
 
+freq, bin_edges = np.histogram(magnitude, bins=30)
+bin_centers = (bin_edges[:-1] + bin_edges[1:])/2.
+plt.plot(bin_centers, freq, 'k-', lw=4)
+plt.xlabel("magnitude of the earthquakes")
+plt.ylabel("Frequency")
+plt.show()
+
+plt.scatter(longitude, latitude, c = magnitude, alpha =0.2)
+cbar = plt.colorbar()
+cbar.set_label("Magnitude of the earthquakes")
+plt.axis("equal")
+plt.xlabel("longitude")
+plt.ylabel("latitude")
+plt.title("loaction of ")
+plt.title("loaction and magnitude of earthquake")
+plt.show()
 
 
 
