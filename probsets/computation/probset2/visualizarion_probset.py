@@ -8,6 +8,7 @@ from matplotlib import pyplot as plt
 from matplotlib import gridspec as gs
 import scipy as sp
 from scipy import special
+from matplotlib.colors import LogNorm
 
 anscombe_data = np.load('anscombe.npy')
 
@@ -104,9 +105,40 @@ plt.title("loaction of ")
 plt.title("loaction and magnitude of earthquake")
 plt.show()
 
+# problem 5
+x = np.linspace(-1, 3, 500)
+X, Y = np.meshgrid(x, x.copy())
+Z = (1 - X)**2 + 100*(Y - X**2)**2
+prob5fig = plt.figure()
+plt.subplot(121)
+plt.pcolormesh(X, Y, Z, cmap = "viridis", norm = LogNorm())
+plt.colorbar()
+plt.plot(1, 1, "ro")
 
+plt.subplot(122)
+plt.contour(X, Y, Z, 48, cmap = "viridis", norm = LogNorm())
+plt.colorbar()
+plt.plot(1, 1, "ro")
 
+plt.tight_layout()
+plt.show()
 
+#problem 6
+# load in the data first
+country_data = np.load("countries.npy")
+countries = ["Austria", "Bolivia", "Brazil", "China",
+"Finland", "Germany", "Hungary", "India",
+"Japan", "North Korea", "Montenegro", "Norway",
+"Peru", "South Korea", "Sri Lanka", "Switzerland",
+"Turkey", "United Kingdom", "United States", "Vietnam"]
+
+'''
+we will plot the four charts as following
+1. we will firstly calculate the per-capita GDP and draw a histogram of the
+per-capita GDP
+ 
+
+'''
 
 
 
