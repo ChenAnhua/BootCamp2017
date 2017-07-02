@@ -126,19 +126,53 @@ plt.show()
 #problem 6
 # load in the data first
 country_data = np.load("countries.npy")
-countries = ["Austria", "Bolivia", "Brazil", "China",
+country_names = ["Austria", "Bolivia", "Brazil", "China",
 "Finland", "Germany", "Hungary", "India",
 "Japan", "North Korea", "Montenegro", "Norway",
 "Peru", "South Korea", "Sri Lanka", "Switzerland",
 "Turkey", "United Kingdom", "United States", "Vietnam"]
+population = country_data[:, 0]
+GDP = country_data[:, 1]
+m_height = country_data[:, 2]
+f_height = country_data[:, 3]
 
-'''
-we will plot the four charts as following
-1. we will firstly calculate the per-capita GDP and draw a histogram of the
-per-capita GDP
- 
+# per-capita GDP
+percapita_GDP = GPD/population
+positions = np.arange(len(country_names))
+prob6fig1 = plt.figure()
+plt.barh(positions, percapita_GDP, align = "center")
+plt.yticks(positions, country_names)
+plt.title("Per-capita GDP")
+plt.xlabel("In thousands of USD")
+plt.show()
 
-'''
+#Male's distirbution
+prob6fig2 = plt.figure()
+plt.hist(m_height, bins = 7)
+plt.xlabel("Male's average height")
+plt.ylabel("Number of country")
+plt.title("Male's height distribution")
+plt.xlim(140, 190)
+plt.show()
+
+#Female's height distirbution
+prob6fig2 = plt.figure()
+plt.hist(f_height, bins = 7)
+plt.xlabel("Female's average height")
+plt.ylabel("Number of country")
+plt.title("Female's height distribution")
+plt.xlim(140, 190)
+plt.show()
+
+#scatterplot between male's and female's height
+prob6fig3 = plt.figure()
+plt.scatter(m_height, f_height, c = percapita_GDP)
+cbar = plt.colorbar()
+cbar.set_label("Per-capita GDP")
+plt.xlabel("Male's average height")
+plt.ylabel("Female's average height")
+plt.show()
+
 
 
 
