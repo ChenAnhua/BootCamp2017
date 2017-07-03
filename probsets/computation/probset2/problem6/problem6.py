@@ -9,7 +9,6 @@ from datetime import datetime
 #readin the data
 location_list = ['Indi', 'Pitt', 'Miam', 'Wash', 'Chic']
 
-data = {}
 
 for location in location_list:
     df = pd.read_csv("{}.csv".format(location))
