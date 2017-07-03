@@ -48,7 +48,7 @@ def numbainterp_adv(x, xp, fp):
                 y[i] = (fp[j+1]- fp[j])/(xp[j+1]-xp[j])*(x[i] - xp[j]) + fp[j]
 
     return(y)
-
+# a test run on the numbainterp
 xp = [1, 2, 3]
 fp = [3, 2, 0]
 x = [0, 1, 1.5, 2.72, 3.14]
