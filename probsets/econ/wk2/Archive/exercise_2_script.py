@@ -7,7 +7,7 @@ from scipy.optimize import fminbound
 from scipy.stats import lognorm
 import matplotlib.pyplot as plt
 
-# we define Bellman operator first
+# we define a modified Bellman operator first
 def bellman_operator(w, grid, beta, u, f, s, exo, shocks, Tw=None, compute_policy=0):
     """
     The approximate Bellman operator, which computes and returns the
@@ -26,6 +26,10 @@ def bellman_operator(w, grid, beta, u, f, s, exo, shocks, Tw=None, compute_polic
         The discount factor
     u : function
         The utility function
+    s:  function
+        The poloicy function
+    exo:scalar
+        equals to 0 if policy function are calculated endogenously and 1 if given exogenously
     f : function
         The production function
     shocks : numpy array
@@ -144,7 +148,7 @@ def sims(s, exo, v_init, tol, epsilon_init):
 
 
 
-#w = bellman_operator(v_star(grid), grid, beta, np.log, lambda k: k**alpha, lambda y: 0.95*y, 0, shocks)
+#plotting
 w = sims(lambda y: 0.95*y,
           0,
           v_star(grid),
