@@ -1,0 +1,236 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in}
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\footnotesize\textsl{OSM Lab, Summer 2017, Math,Inner Product Space \#2}}
+\cfoot{}
+\rfoot{\footnotesize\textsl{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{float,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=red,urlcolor=blue,citecolor=red}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{section}
+\bibliographystyle{aer}
+\newcommand\ve{\varepsilon}
+\newcommand\boldline{\arrayrulewidth{1pt}\hline}
+
+\begin{document}
+
+\begin{flushleft}
+   \textbf{\large{Math, Inner Product Space\#2}} \\[5pt]
+   OSM Lab instructor,Zachary Boyd \\[5pt]
+   OSM Lab student, CHEN Anhua\\[5pt]
+   Due Wednesday, July 5 at 8:00am
+\end{flushleft}
+
+\vspace{5mm}
+
+
+\begin{enumerate}
+	\item (3.1)\\
+	Define $<x,y>$ as $x \times y$ in a real inner porduct space. It's easy to show that $<x, y>$ satisfies all there properties of an IPS. \\
+	i.  RHS $= \frac{1}{4} ((x + y)\times (x + y) - (x-y)\times (x-y)) = x \times y = $LHS\\
+	ii.  RHS $= \frac{1}{2} (2x^2 + 2y^2) = x^2 + y^2 = $ LHS\\
+		
+	\item(3.2)\\
+	Let $x = a + bi$ and $y = c + di$, where $a, b, c, d  \in \mathbb{R}$. \\
+	LHS $= ac - bd + (bc + ad)i$\\
+	RHS  $= \frac{1}{4}\times(4ac - 4bd + 4adi +4bci) = $LHS\\
+
+	\item(3.3)\\
+	i. $cos\theta = \frac{<f, g>}{||f|| ||g||} = \frac{\int_{0}^{1} x^6 dx}{\int_{0}^{1} x^2 dx \int_{0}^{1} x^10 dx}$\\
+	   $= \frac{\sqrt{33}}{7}$\\
+	ii. $cos\theta = \frac{<f, g>}{||f|| ||g||} = \frac{\int_{0}^{1} x^6 dx}{\int_{0}^{1} x^4 dx \int_{0}^{1} x^8 dx}$\\
+	   $= \frac{3\sqrt{5}}{7}$\\
+	
+	\item(3.8)\\
+	i. for $x \in \{ cos(t), sin(t), cos(2t), sin(2t) \}$, we always have $<x, x> = 1$. For $x, y \in \{ cos(t), sin(t), cos(2t), sin(2t) \}$ and $x \neq y$, we always have $<x,y> = 0$. Therefore, S is an orthonormal set.\\
+	ii. $||t|| = <t, t> = \frac{1}{\pi} \int_{\pi}^{\pi}t^2 dt = \frac{1}{\pi}(\frac{1}{3}\pi^3 -\frac{1}{3}(-\pi)^3) = \frac{2\pi^2}{3}$\\
+	iii. Since S is an orthonormal set, for $x_{i} \in \{ cos(t), sin(t), cos(2t), sin(2t) \}, proj_{X}cos(3t) = \sum_{x_{i} \in S}<cos(3t), x_{i}>x_{i} = $\\
+	iv. Since S is an orthonormal set, for $x_{i} \in \{ cos(t), sin(t), cos(2t), sin(2t) \}, proj_{X}t = \sum_{x_{i} \in S}<t, x_{i}>x_{i} = $\\
+
+	
+	\item(3.9)\\
+	For $x, y \in  \mathbb{R}, M[x, y]^T = \frac{1}{\sqrt{5}}[x+2y, 2x-y]^T$. Therefore, for $x, y, z, w \in  \mathbb{R}$,  $<M[x, y]^T, M[w, z]^T> = (xw +yz)$. We notice that $<[x, y]^T,[w, z]^T> = (xw +yz) $. Therefore, the rotation in $\mathbb{R}^2$ is an orthonormal transformation.\\
+
+	\item(3.10)\\
+	i. "if": Let $x, y \in \mathbb{F}^{n}$, according to Definition 3.2.14, $<Qx, Qy> = (Qx)^{H}Qy = x^{H}Q^{H}Qx = <x, y> = x^{H}y$. So $Q^{H}Q = I$. Trivial to prove that $QQ^{H} = I$\\
+	   "only if": $<Qx, Qy> = (Qx)^{H}(Qy) = x^{H}Q^{H}Qy = x^{H}y = <x, y>$\\
+	ii. $<Qx, Qx> = <x,x>$. Therefore, $||Qx|| = ||x||$ for all $x \in mathbb{F}^{n}$\\
+	iii. First, $<Q^{H}x, Q^{H}y> = x^{H}(QQ^{H})y = <x, y>$, therefore, $Q^{H}$ is an orthonormal matrix. Also, $QQ^{H} = I \implies Q^{-1}QQ^{H} = Q^{-1}I \implies Q^{-1} = Q^{H}$. Therefore, $Q^{-1}$ is an orthonormal matrix.\\
+	iv. Let $Q = 
+	\begin{bmatrix}
+	    q_{1}  & \hdots & q_{n} 
+	\end{bmatrix}$
+	then $Q^{H}Q = 
+	\begin{bmatrix}
+	   q_{1}^{H}q_{1} & \hdots &  q_{1}^{H}q_{n} \\
+	   \vdots & \ddots & \vdots \\
+	   q_{n}^{H}q_{1} & \hdots &  q_{n}^{H}q_{n} 
+	\end{bmatrix} = I$\\
+	Therefore, the columns are orthonormal.\\
+	v. $1 = det(I) = det(QQ^{H}) = det(Q)det(Q^{H})$. Because $det(Q) = det(Q^{H})$, $|det(Q)| = 1$\\
+
+	
+	\item(3.11)\\
+	W.L.O.G., let's assume $x_{t} = \sum_{j = 1}^{t - 1}\alpha_{j}x_{j}$. Then we have:\\
+	$p_{t - 1} = \sum_{i = 1 }^{t -1}<q_{i},x_{t}>q_{i}$\\
+	$= \sum_{i = 1 }^{t -1}<q_{i}, \sum_{j = 1}^{t - 1}\alpha_{j}x_{j}>q_{i}$\\
+	$= \sum_{i = 1 }^{t -1}\sum_{j = 1}^{t - 1}(\alpha_{j}<q_{i},x_{j}>q_{i})$\\
+	$= \sum_{i = 1 }^{t -1}\alpha_{i}x_{i} = x_{t} $\\
+	This means $q_{t}$ is divided by $0$ and G-S algorithm cannot proceed further on.\\
+
+	\item(3.16)\\
+	i. Let $A \in \mathbb{M}_{m\times n} A = QR$. Let $D$ be a diagonal matrix with $-1$ on its first diagonal element and $1s$ on other diagonal positions. Then $A  = Q(DD^{-1})R = (QD)(D^{-1}R)$. We find that $QD$ is also an orthonormal matrix and $D^{-1}R$ is also an upper triangular matrix. Therefore, the $QR$ decomposition is not unique.\\
+	ii. Assume that $A = Q_{1}R_{1} = Q_{2}R_{2} \implies R_{1}R_{2}^{-1} = Q_{1}^{H}Q_{2}$. If we let $M =  R_{1}R_{2}^{-1} = Q_{1}^{H}Q_{2}$. We find tha $M$ is both orthonormal and upper triangular, therefore a diagonal matrix. If diagonal elements of $M$ are all positive, then $M = I$. Decomposition is unique.\\
+	
+	\item(3.17)\\
+	$x = (A^{H}A)^{-1}A^{H}b$\\
+	 $x = (\hat{R}^{H}(\hat{Q}^{H}\hat{Q})\hat{R})^{-1}A^{H}b$\\
+	$x = \hat{R}^{-1}(\hat{R}^{H})^{-1}\hat{R}^{H}\hat{Q}^{H}b$\\
+	$x = \hat{R}^{-1}\hat{Q}^{H}b$\\
+
+	\item(3.23)\\
+	i. $||x|| = ||x - y +y || \leq ||x-y || + || y||$. Therefore, $||x|| - ||y|| \leq ||x-y||$.\\
+	ii. $||y||  = ||y - x + x|| \leq ||y-x|| +||x||$. Therefore, $||y|| - ||x|| \leq ||y-x|| = ||-1||\cdot ||x-y|| = ||x - y||$.\\
+	Combining i and ii, we could prove the question.\\
+	
+	\item(3.24)\\
+	i. Positivity and scalar preservation are easy to check, therefore omitted;  For triangular inequality, $||f + g||_{L^{1}} = \int_{a}^{b}|f(t) + g(t)|dt \leq \int_{a}^{b}(|f(t)| + |g(t)|)dt = ||f||_{L^{1}} +||g||_{L^{1}}$\\
+	ii. Positivity and scalar preservation are easy to check, therefore omitted;  For triangular inequality, it's easy to prove using the Minkowski's integral inequality.\\
+	iii. Positivity and scalar preservation are easy to check, therefore omitted;  For triangular inequality, $\sup_{x \in [a, b]}|f(x) + g(x)| \leq \sup_{x \in [a, b]}|f(x)| + \sup_{x \in [a, b]}|g(x)|$. Therefore $||f +g||_{\infty} \leq ||f||_{\infty}  + ||g||_{\infty}$.\\
+	
+	\item(3.26)\\
+	(Equivalence relation) $\exists 0 < m \leq M         s.t. m||x||_{a} \leq ||x||_{b} \leq M||x||_{a}$. Also $\exists 0 < \frac{1}{M} \leq \frac{1}{m}        s.t. \frac{1}{M}||x||_{b} \leq ||x||_{a} \leq \frac{1}{m}||x||_{b}$. Therefore, it's an equivalent relation.\\
+	i. $||x||_{2} = (\sum_{i = 1}^{n}|x_{i}|^{2})^{\frac{1}{2}} \leq ((\sum_{i =1}^{n}|x_{i}|)(\sum_{i = 1}^{n}x_{i}))^{\frac{1}{2}} = \sum_{i = 1}^{n}|x_{i}| = ||x||_{1}$. Also, $||x||_{1} = \sum_{i = 1}^{n}|x_{i}|\cdot 1 \leq (\sum_{i  = 1}^{n}|x_{i}|^{2})^{\frac{1}{2}}(\sum_{i = 1}^{n}1^{2})^{\frac{1}{2}}  = \sqrt{n}||x||_{2}$\\
+	ii. $||x||_{\infty} = \sup \{|x_{1}|, \hdots, |x_{n}|\}$. $||x||_{\infty} \leq ||x||_{2}$ is trivial to prove. $||x||_{2} = (\sum_{i = 1}^{n}|x_{i}|^{2})^{\frac{1}{2}} \leq = (\frac{1}{n}||x||_{\infty}^{2})^{\frac{1}{2}} = \frac{1}{\sqrt{n}}||x||_{\infty}$\\
+
+	\item(3.28)\\
+	Since $||A||_{p} = \sup_{x \neq =0}\frac{||Ax||_{p}}{||x||_{p}}$, We could directly use te results from 3.26 to prove this question. \\
+	i. Given i) in 3.26, we know that $||Ax||_{2} \leq ||Ax||_{1} \leq \frac{1}{\sqrt{n}}||Ax||_{2}$ and $||x||_{2} \leq ||x||_{1} \leq \frac{1}{\sqrt{n}}||x||_{2}$. Therefore, $\frac{1}{\sqrt{n}}||A||_{2} \leq ||A||_{1} \leq \sqrt{n}||A||_{2}$\\
+	ii. Given ii) in 3.26, using the same logic in i) above, it's  easy to prove.\\
+
+	\item(3.30)\\
+	i. The positivity is easy to prove. \\
+	ii. Homogneity: $||aA||_{S} = ||S(aA)S^{-1}|| = a||SAS^{-1}|| = a||A||_{S}$\\
+	iii. Triangular inequality: $||A+ B||_{S} = ||S(A+B)S^{-1}|| = ||SAS^{-1} + SBS^{-1}||$. Given $||\cdot||$ is a matrix norm, it satisfies the triangular inequality. Therefore $||SAS^{-1} + SBS^{-1}|| \leq ||SAS^{-1}|| + ||SBS^{-1}|| = ||A||_{S} +||B||_{S}$\\
+	Therefore, $||\cdot||_{S} is a matrix norm.$\\
+
+	\item(3.37)\\
+	suppose $p =  a + bx +cx^{2} = [1,  x,  x^2][a,  b,  c]^{T}$. Since$L(p) =  p^{'}(1) = 2c + b = <q, p>$. Therefore, $q = [\frac{2c + b}{a}, 0, 0]$\\
+
+	\item(3.38)\\
+	By using the same method in 3.37, we have $D = [b, a2c, 0]^{T}$\\
+
+	\item(3.39)\\
+	i. $<(S+T)^{*}y, x> = <y, (S + T)x> = <y, Sx> + <y, Tx> = <S^{*}y, x> + <T^{*}y, x> = <(S^{*} + T^{*})y, x>$. So $(S + T)^{*} = (S^{*} + T^{*})$. Also $<(\alpha T)^{*}y, x> = <y,\alpha Tx> = \overline{\alpha}<T^{*}y,x> = <\overline{\alpha}T^{*}y,x>$\\. Therefore, $(\alpha T)^{*} = \overline{\alpha}(T)^{*}$.\\
+	ii. $<(S^{*})^{*}y, x> = <y,S^{*}x> = <Sy, x>$, therefore, $(S^{*})^{*} = S$\\
+	iii. $<(ST)^{*}y,x> = <y, (ST)x> = <S^{*}y,Tx> = <T^{*}S^{*}y,x>$. Therefore, $(ST)^{*} = T^{*}S^{*}$.\\
+	iv. AAccording to (iii), $(T^{-1})^{*}T^{*} = (TT^{-1})^{*} = I^{*} = I$. Therefore, $(T^{-1})^{*} = (T^{*})^{-1}$.\\
+
+
+	\item(3.40)\\
+	i. Let $X, Y \in M_{n}(\mathbb{F})$, then $<Y, A^*X> = <A^*Y, X> \implies Y^{H}A^{*}X = (AY)^{H}X = Y^{H}A^{H}X$. Therefore, $A^{*} = A^{H}$\\
+	ii. Based on the equivalence proved in i, we have $<A_{2}, A_{3}A_{1}> = tr(A_{2}^{H}A_{3}A_{1}) =  tr(A_{2}^{*}A_{3}A_{1}) =  tr(A_{1}A_{2}^{*}A_{3}) = tr(A_{1}A_{2}^{H}A_{3}) = <A_{2}A_{1}^{H}, A_{3}> = <A_{2}A_{1}^{*}, A_{3}> $\\
+	iii. $<Y, T_{A}^{*}(X)> = <T_{A}(Y), X> = <AY - YA, X> = <AY, X> - <YA, X>  = tr(Y^{H}A^{H}X) - tr(A^{H}Y^{H}X) =  tr(Y^{H}(A^{H}X)) - tr(Y^{H}(XA^{H})) = <Y, A^{H}X> - <Y, XA^{H}> =<Y, A^{*}X> - <Y, XA^{*}> = <Y, T_{A^{*}}(X)>$. Therefore, $(T_{A})^{*} = T_{A^{*}}$.\\
+
+	\item(3.44)\\
+	i. If $Ax = b$ has a solution $x \in \mathbb{F}$ then $b \in \mathcal{R}(A)$. Since $y \in \mathcal{N}(A^{H}) =\mathcal{N}(A^{*}) = \mathcal{R}(A)^{\bot} $, this means $<y, b> = 0$.\\
+	ii.  If $Ax = b$ doesn't have a solution $x \in \mathbb{F}$, then it indicates that  $b \in \mathcal{R}(A)^{\bot}$. Then there exists $y \in \mathcal{N}(A^{H})$ such that $<y,b> \neq 0$\\
+
+	\item(3.45)\\
+	Given Theorem 3.8.5, to prove $Sym_{n}(\mathbb{R})^{\bot} = Skew_{n}(\mathbb{R})$ is equivalent to prove that $Sym_{n}(\mathbb{R}) \bigoplus Skew_{n}(\mathbb{R}) = \mathbb{R}$. Since $\forall A \in M_{n}(\mathbb{R})$	 we could write $A = \frac{A + A^{T}}{2} +  \frac{A - A^{T}}{2}$. It's easy to prove that $\frac{A + A^{T}}{2} \in Sym_{n}(\mathbb{R})$ and $ \frac{A - A^{T}}{2} \in  Skew_{n}(\mathbb{R})$. Therefore this decomposition holds for all satisfied $A$ in the space. \\
+
+	\item(3.46)\\
+	i. By definition, $Ax \in \mathcal{R}(A)$. Since $x \in \mathcal{N}(A^{H}A)$, $A^{H}Ax = 0$. So $Ax \in \mathcal{N}(A^{H})$.\\
+	ii. It's easy to prove that $\mathcal{N}(A) \subset \mathcal{N}(A^{H}A)$. If $x \in \mathcal{N}(A^{H}A)$, then $x^{H}A^{H}Ax = 0 \implies (Ax)^{T}(Ax) = 0 \implies Ax = 0 \implies x \in \mathcal{N}(A)$. So $\mathcal{N}(A^{H}A) = \mathcal{N}(A)$.\\
+	iii. Combininig ii and Rank-Nullity Theorem, it's easy to prove, given $\mathcal{N}(A^{H}A)= \mathcal{N}(A)$ \\
+	iv. Natural to prove directly from arguments in iii.\\
+
+	\item(3.47)\\
+	i. $P^{2} = A(A^{H}A)^{-1}A^{H}A(A^{H}A)^{-1}A^{H} = A(A^{H}A)^{-1}A^{H} = P$\\
+	ii. $P^{H} = (A(A^{H}A)^{-1}A^{H})^{H} = A(A^{H}A)^{-1}A^{H} = P$\\
+	iii. $Rank(P)  = Rank(A(A^{H}A)^{-1}A^{H}) \leq Rank(A)$, and $Rank(A) = Rank(A(A^{H}A)^{-1}(A^{H}A)) = Rank(PA) \leq Rank(P)$. Therefore, $Rank(A) = Rank(P)$\\
+
+	\item(3.48)\\
+	i. $P(A+B) = \frac{(A + B) + (A + B)^{T}}{2} =  \frac{(A + B) + A^{T} + B^{T}}{2} = P(A) + P(B)$\\
+	ii. $P^{2}(A) = P(\frac{1}{2}(A + A^{T})) = \frac{\frac{1}{2}(A + A^{T}) + \frac{1}{2}(A + A^{T})^{T}}{2} = P(A)$\\
+	iii. We could directly using the fact that $P^{*} = P^{T}$ in question i in 3.40 and$ P^{T} = P$ to prove this.\\
+	iv. $\forall x \in \mathcal{N}(P), Px = 0 \iff \frac{x + x^{T}}{2} = 0 \iff x^{T} = -x \iff x \in Skew_{n}(\mathbb{R})$. Therefore, $\mathcal{N}(P) = Skew_{n}(\mathbb{R})$\\
+	v. By using the result of 3.45 and question (iii), we know that $Sym_{n}(\mathbb{R}) = Skew_{n}(\mathbb{R})^{\bot} = \mathcal{R}(P^{*}) = \mathcal{R}(P)$. \\
+	vi. $A - P(A) = \frac{A - A^{T}}{2}$. Therefore, $\sqrt{<\frac{A - A^{T}}{2}, \frac{A - A^{T}}{2}>} = \sqrt{\frac{1}{4}(tr(A^{T}A) - tr(A^2) - tr((A^{T})^{2})))} = \sqrt{\frac{tr(A^{T}A) - tr(A^{2})}{2}}$\\
+
+	\item(3.50)\\
+	$A=
+	\begin{bmatrix}
+	    x_{1}^{2} & 1  \\
+	   x_{2}^{2} & 1\\
+	    \vdots & \vdots  \\
+	   x_{n}^{2} & 1 
+	\end{bmatrix}
+	$\\
+	$x = 
+	\begin{bmatrix}
+	    -\frac{r}{s}  \\
+	   \frac{1}{s}
+	\end{bmatrix}
+	$\\
+	$
+	b= 
+	\begin{bmatrix}
+	    y_{1}^{2}  \\
+	   \vdots \\
+	    y_{n}^{2}
+	\end{bmatrix}
+	$
+	
+	 
+ 	
+
+
+
+
+\end{enumerate}
+
+\vspace{25mm}
+
+
+
+\end{document}

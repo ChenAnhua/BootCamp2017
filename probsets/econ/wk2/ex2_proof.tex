@@ -62,14 +62,21 @@
 
 \vspace{5mm}
 
-\textbf{Proof}
+\textbf{Arguments:}
 \begin{enumerate}
-	\item It's trivial to show that $Uw(y)$ is in $\mathbb{R_+}$ since $u, \beta$ and $w$ all belong to $\mathbb{R_+}$\\
+	\item It's easy to show that $Uw(y)$ is in $\mathbb{R_+}$ since $u, \beta$ and $w$ all belong to $\mathbb{R_+}$\\
 
-	\item Define $\rho(g, f) =\sup \limits_{y \geq 0} |g(y) - f(y)|$. It's trivial to prove that $(\mathbb{R_+}, \rho)$ is a complete space.\\
+	\item Define $\rho(g, f) =\sup \limits_{y \geq 0} |g(y) - f(y)|$. It's easy to prove that $(\mathbb{R_+}, \rho)$ is a complete space.\\
 
-	\item Now we will prove that $U$ is a contraction map and unique fixed point of $U$ in $\mathcal{C}$. \\
-	$$
+	\item Now we will prove that $U$ is a contraction map on $(\mathcal{C}, \rho)$. \\
+	$|Uw(y) - Uw^{'}(y)| =| \beta \int w(f(y - \sigma (y))z)\phi(dz) - \beta \int w^{'}(f(y - \sigma (y))z)\phi(dz)|$\\
+	                                   $= \beta|\int (w(y) - w^{'}(y))\phi(dz)|$\\
+				   $\leq  \beta\int |(w(y) - w^{'}(y))|\phi(dz) $\\
+				   $\leq \beta \int \sup_{y}|w(y) - w^{'}(y)|z\phi(dz)$\\
+				   $= \beta \sup_{y}|w(y) - w^{'}(y)|$\\
+				   $= \beta \rho(w, w^{'})$\\
+	Therefore, we find $U$ is a contraction map on $(\mathcal{C}, \rho)$.
+
 	
 \end{enumerate}
 

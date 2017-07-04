@@ -72,7 +72,7 @@ for i, date in enumerate(peak_list):
     else:
         plt.plot(data.index, data[date], next(linecycler), lw = 1)
 
-plt.legend(loc = 'upper left', ncol = 3)
+plt.legend(loc='upper left', ncol = 3)
 xtick_new = [-12, 0, 12, 24, 36, 48, 60, 72, 84]
 xticklabel_new = ['-1yr', 'peak', '+1yr', '+2yr', '+3yr', '+4yr', '+5yr', '+6yr', '+7yr']
 plt.xticks(xtick_new, xticklabel_new)
