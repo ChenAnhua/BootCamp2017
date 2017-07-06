@@ -1,0 +1,111 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in}
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\footnotesize\textsl{OSM Lab, Summer 2017, Math,Inner Product Space \#2}}
+\cfoot{}
+\rfoot{\footnotesize\textsl{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{float,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=red,urlcolor=blue,citecolor=red}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{section}
+\bibliographystyle{aer}
+\newcommand\ve{\varepsilon}
+\newcommand\boldline{\arrayrulewidth{1pt}\hline}
+
+\begin{document}
+
+\begin{flushleft}
+   \textbf{\large{Math, Inner Product Space\#2}} \\[5pt]
+   OSM Lab instructor,Zachary Boyd \\[5pt]
+   OSM Lab student, CHEN Anhua\\[5pt]
+   Due Wednesday, July 5 at 8:00am
+\end{flushleft}
+
+\vspace{5mm}
+
+
+\begin{enumerate}
+	\item (4.2)\\
+	D should take the form of 
+	$\begin{bmatrix}
+	   0 & 1 & 0\\
+	   0 & 0 & 2\\
+	   0 & 0 & 0
+	\end{bmatrix} $\\
+	$p_{D}(z) = det(zI - D) = z^{3}$. If $p_{D}(z) = 0$, it indicates that eigenvalue of $D$ is $0$ with the algebric multiplicity of 3. Also $\mathcal{N}(0I - D) = \mathcal{N}(-D) = span\{[x, 0, 0]^{T}\}$. The geometric multiplicity is $1$, since $dim(\mathcal{N}(-D)) = 1$.\\
+	
+	\item(4.4)\\
+	Using 4.3, we could show if $(tr(A)^{2} - 4det(A))$ is non-negative, then the matrix only got real eigenvalues, otherwise, it only gets imaginary eigenvalues.\\
+	i. If the matrix is Hermitian, the $A =\begin{bmatrix}
+	   a & b \\
+	   b & d 
+	\end{bmatrix}  $, then $(tr(A)^{2} - 4det(A)) = (a - d)^{2} + 4b^{2} \geq = 0$\\
+	ii. If the matrix is skew-Hermitian, then $\begin{bmatrix}
+	   0 & b \\
+	   -b & 0 
+	\end{bmatrix} $. Therefore, $(tr(A)^{2} - 4det(A)) = -4b^{2} < 0$ for $b \neq 0$\\
+	
+	
+	\item(4.6)\\
+	Let $A_{n \times n}$ be an upper triangular matrix. $det(\lambda I - A) = 0 \implies \prod_{i = 1}^{n}(\lambda_{i} - a_{ii}) = 0$. Therefore, the eigenvalues of matrix $A$ are its diagonal elements.\\
+	
+	\item(4.8)\\
+	i. To prove $\{ sin(x), cos(x), sin(2x), cos(2x) \}$ is the basis for V, we need to prove they are linearly independent. This is equivalent to prove that for $\forall x \in \mathbb{R}, asin(x) + bcos(x) + csin(2x) + dcos(2x) = 0 only when a = b = c = d = 0 $. When $x=0, b + d = 0$. When $x = \pi, -b + d = 0$. Therefore, $b = d = 0$. Also, when $x = \frac{\pi}{2}, a-d = 0 \implies a = 0$. Then $\forall x \in \mathbb{R}, dcos(2x) = 0 \implies d = 0$. This completes the proof that S is a basis for V.\\
+	ii. $(asin(x) +bcos(x) +csin(2x) +dcos(2x))^{'} = (-b)sin(x) + acos(x) +(-2d)sin(2x) + 2ccos(x)$. So the matrix representation of D is $\begin{bmatrix}
+	   0 & -1 & 0 & 0 \\
+	   1 & 0 & 0 & 0 \\
+	   0 & 0 & 0 & -2 \\
+	   0 & 0 & 2 & 0
+	\end{bmatrix} $\\
+	iii. \\
+
+	\item(4.13)\\
+	
+
+
+\end{enumerate}
+
+\vspace{25mm}
+
+
+
+\end{document}
