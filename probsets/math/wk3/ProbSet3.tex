@@ -96,7 +96,7 @@
 	   0 & 0 & 0 & -2 \\
 	   0 & 0 & 2 & 0
 	\end{bmatrix} $\\
-	iii. \\
+	iii. $span\{ [1, 0, 0, 0], [0, 1, 0, 0] \}$ and $span\{ [0, 0, 1, 0], [0, 0, 0, 1]\}$\\
 
 	\item(4.13)\\
 	Let $B = P^{-1}AP$, where $B$ is a diagonal matrix. Since $P$ is a non-singular matrix, it indicates that A is diagonalizable. According to the Theorem 4.3.7, A is also semisimple. Then columns of  $P$ are just the eigenvectors of $A$ and $B$ is a diagonal marix with eigenvalues on its diagonal. $\lambda = 1$ and $0.4$. Therefore, we let $P = \begin{bmatrix}
@@ -143,7 +143,26 @@
 	Since A is Hermitian, $B = U^{H}AU \implies B^{H} = ( U^{H}AU)^{H} = (U^{H}A^{H}U) = (U^{H}AU) = B$.\\
 	
 	\item(4.24)\\
-	i. If $A$ is Hermitian, \\
+	i. If $A$ is Hermitian, according to Corollary 4.4.9, it must have an orthonormal eigen basis $V$. We represent $x$ in V as $x = Va$, where $a$ is the coefficient vector of $x$ in basis $V$. Then $\rho(x) = \frac{<x, Ax>}{||x||^{2}}$\\
+ 	   $ = \frac{a^{H}V^{H}AVa}{a^{H}a}$\\
+	   $ = \frac{a^{H}Da}{a^{H}a}$ (where D is a diagonal matrix, the diagonal elements of which are real eigenvalues of A)\\
+	   $ = \frac{\sum_{i = 1}^{n} \lambda_{i}|a_{i}|^{2}}{\sum_{i = 1}^{n} |a_{i}|^{2}}$ (which has to be real given all its elements are real value)\\
+	Since all eigenvlaues of a skew-Hermitian matrix are all imaginary, we could use the same proof techniques above, therefore omitted.\\
+
+	\item(4.25)\\
+	i. Since $X = \begin{bmatrix}
+	  x_{1} &  \hdots & x_{n}
+	\end{bmatrix}$ is orthonormal, therefore, $XX^{H} = I \implies \sum_{i = 1}^{n}x_{i}x_{i}^{H}$\\
+	ii. Given the result in i., left-multiplying both side by $A$ will give us that $A = \sum_{i}^{n} Ax_{i}x_{i}^{H} = \sum_{i}^{n} \lambda_{i} x_{i}x_{i}^{H}$\\
+
+	\item(4.27)\\
+	Since $A$ is positive definite, it's also Hermitian. Therefore, all its diagonal elements are real. If any of its diagonal element is not positive, W.L.O.G., we assue $a_{ii} \leq 0$. Then, we let $y = e_{i}$. $<y, Ay> = y^{H}Ay = a_{ii} \leq 0$, contradicting the fact that $A$ is a positive definite matrix.\\
+
+	\item(4.28)\\
+	Since Cauchy Schwartz need to hold for any inner product space, we have $tr(AB) \leq \sqrt{tr(A^2)tr(B^2)}$\\
+	$ = \sqrt{(\sum_{i = 1}^{n}\lambda_{a, i}^{2})(\sum_{i = 1}^{n}\lambda_{b, i}^{2})}$\\
+	$\leq  \sqrt{(\sum_{i = 1}^{n}\lambda_{a, i})^{2}(\sum_{i = 1}^{n}\lambda_{b, i})^{2}}$\\
+	$= tr(A)tr(B)$
 
 	\item(4.31)\\
 	i. $||A||_{2} = \sup_{x \neq 0} \frac{||Ax||_{2}}{||x||_{2}}$\\
@@ -171,7 +190,10 @@
 	$= ||A||_{2} $\\
 
 	\item(4.36)\\
-	
+	$A =  \begin{bmatrix}
+	  4 &  1\\
+	   0 & 4\\
+	\end{bmatrix}$
 
 
 	\item(4.38)\\
