@@ -157,7 +157,41 @@
 	iii. It's easy to prove that $||A||_{2}^{H} = ||A||_{2}^{T} = ||A||_{2}$ since the $\Sigma$ of their SVD is the same. $A^{H}A = V\Sigma^{H}U^{H}U\Sigma V^{H} = V \Sigma^{H}\Sigma V^{H}$. Since the diagonal elements of $ \Sigma^{H}\Sigma$ are $\sigma_{1}^{2}, \sigma_{2}^{2}, \hdots, \sigma_{n}^{2}$. By using the results of i., we could know that $||A^{H}A|| = \sigma_{1}^{2}$.\\
 	iv. $||UAV||_{2}^{2} = ||UAVV^{H}A^{H}U^{H}||_{2} = ||UAA^{H}U^{H}||_{2} = ||AA^{H}U^{H}||_{2} = ||(AA^{H}U^{H})^{H}||_{2} = ||UAA^{H}||_{2} = ||AA^{H}||_{2} = ||A||_{2}^{2}$\\
 
-	\item(4.25)\\
+	\item(4.32)\\
+	i. $||UAV||_{F} = (tr((UAV)^{H}UAV))^{\frac{1}{2}} = (tr(V^{H}A^{H}AV))^{\frac{1}{2}} = (tr(VV^{H}A^{H}A))^{\frac{1}{2}} = (tr(A^{H}A))^{\frac{1}{2}} = ||A||_{F}$\\
+	ii. Accoding to SVD Theorem, let $A = U\Sigma V^{H}$, so $||A||_{F} = tr(A^{H}A)^{\frac{1}{2}} = tr(V\Sigma^{H}\Sigma V^{H})^{\frac{1}{2}}  = tr(V^{H}V\Sigma^{H}\Sigma)^{\frac{1}{2}} = tr(\Sigma^{H}\Sigma)^{\frac{1}{2}} = (\sum_{i = 1}^{r} \sigma_{i})^{\frac{1}{2}}$\\
+
+	\item(4.33)\\
+	By 4.31, we know that $||A||_{2} = \sigma_{1}$. According to SVD Theorem, let $A = U\Sigma V^{H}$. Let $x = \sum_{i = 1}^{n} a_{i}v_{i} = Va$, where we expressed $x$ in the orthonormal basis of $V$. Similarly, we let $y = Ub$. Since $x^{H}x, y^{H}y = 1 \implies a^{H}V^{H}Va = 1 \implies a^{H}a = 1$ and $b^{H}b = 1$.\\
+	$\sup_{||x||_{2} = 1, ||y||_{2} = 1}|y^{H}Ax|$\\
+	$ = \sup_{||a|| = 1, ||b|| = 1} |b^{H}U^{H}U\Sigma V^{H} Va|$\\
+	$= \sup_{||a|| = 1, ||b|| = 1} | b^{H} \Sigma a|$\\
+	$=  \sup_{||a|| = 1, ||b|| = 1} |\sum_{i = 1}^{n}\sigma_{i}a_{i}b_{i}| $\\
+	$= \sigma_{1}$ (According to Cauchy Schwartz inequality)\\
+	$= ||A||_{2} $\\
+
+	\item(4.36)\\
+	
+
+
+	\item(4.38)\\
+	Let $A = U_{1}\Sigma_{1}V_{1}^{H}$\\
+	i. $AA^{\dagger}A$\\
+	   $ =  U_{1}\Sigma_{1}V_{1}^{H}V_{1}\Sigma_{1}^{-1}U_{1}^{H}U_{1}\Sigma_{1}V_{1}^{H}$\\
+	   $ = U_{1}\Sigma_{1}V_{1}^{H} = A$\\
+	ii. $A^{\dagger}AA^{\dagger}$\\
+	   $ = V_{1}\Sigma_{1}^{-1}U_{1}^{H}U_{1}\Sigma_{1}V_{1}^{H}V_{1}\Sigma_{1}^{-1}U_{1}^{H}$\\
+	   $ = V_{1}\Sigma_{1}^{-1}U_{1}^{H} = A^{\dagger}$\\
+	iii.$ (AA^{\dagger})^{H}$\\
+	   $ = (V_{1}\Sigma_{1}^{-1}U_{1}^{H})^{H}(U_{1}\Sigma_{1}V_{1}^{H})^{H}$\\
+	   $ =  U_{1}\Sigma_{1}V_{1}^{H}V_{1}\Sigma_{1}^{-1}U_{1}^{H}$\\
+	   $ = AA^{\dagger}$\\
+	iv.$ (A^{\dagger}A)^{H}$\\
+	   $ = (U_{1}\Sigma_{1}V_{1}^{H})^{H}(V_{1}\Sigma_{1}^{-1}U_{1}^{H})^{H}$\\
+	   $ =  V_{1}\Sigma_{1}^{-1}U_{1}^{H}U_{1}\Sigma_{1}V_{1}^{H}$\\
+	   $ = A^{\dagger}A$\\
+	
+	
 	
 	
 
