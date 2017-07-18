@@ -1,0 +1,98 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in}
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\footnotesize\textsl{OSM Lab, Summer 2017, Math,Convex analysis \#5}}
+\cfoot{}
+\rfoot{\footnotesize\textsl{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{float,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=red,urlcolor=blue,citecolor=red}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{section}
+\bibliographystyle{aer}
+\newcommand\ve{\varepsilon}
+\newcommand\boldline{\arrayrulewidth{1pt}\hline}
+
+\begin{document}
+
+\begin{flushleft}
+   \textbf{\large{Math, Convex analysis\#5}} \\[5pt]
+   OSM Lab instructor, Jorge Barro\\[5pt]
+   OSM Lab student, CHEN Anhua\\[5pt]
+   Due Wednesday, July 21 at 8:00am
+\end{flushleft}
+
+\vspace{5mm}
+
+
+\begin{enumerate}
+	\item(7.1)\\
+	Let $x, y \in conv(C)$, where $x = \sum_{i = 1}^{n}a_{i}x_{i} $ and $y = \sum_{j = 1}^{m}b_{j}y_{j}$. Then for $t \in [0, 1]$, we define $tx + (1 - t)y = \sum_{k}^{n+m} \theta c_{k}$, where $\theta_{k} = a_{k}, c_{k} = x_{k}$ if $k \leq n $ and $\theta_{k} = b_{k-n}, c_{k} = y_{k- n}$ if $k > n$. Since $c_{k} \in C $ and $t\sum_{i = 1}^{n} + (1 - t)\sum_{j = 1}^{m} = 1 $, $tx + (1 - t)y \in conv(C) \implies conv(C)$ is a convex set.\\
+
+	\item(7.2)\\
+		(i)  If $x, y \in P = \{ x \in V | <a, x> = b \}$, then $<a, x> = b, <a, y> = b$. $<a, \lambda x + (1 - \lambda) y> = \lambda<a, x> + (1 - \lambda)<a, y> =  b$. Therefore, hyperplane is a convex set.\\
+		(ii)  If $x, y \in H = \{ x \in V | <a, x> \leq b \}$, then $<a, x> \leq b, <a, y> \leq b$. $<a, \lambda x + (1 - \lambda) y> = \lambda<a, x> + (1 - \lambda)<a, y> \leq  b$. Therefore, half space is a convex set.\\
+
+	\item(7.4)\\
+	i). $||x - y||^2 = ||x - p + p - y||^2 = <(x - p + p - y) , (x - p + p - y)>  = ||x - p||^2 + ||p - y||^2 + 2<x - p, p-y> $\\
+	ii).If $<x - p, p-y> \geq 0$, it's easy to use i) to prove that $||x - y|| > ||x - p||$\\
+	iii).This one could be easily proved by using the method in i) and substituting z by the convex combination of y and p.\\
+	iv). If we let $z = \lambda y + (1 - \lambda) p$, according to i), we have $||x - z||^{2} = ||x - p||^{2} + ||p - z||^2 + 2 <x - p, p - z> \implies 2 <x - p, p - z> = ||x - z||^{2} - ||x - p||^{2} - ||p - z||^2$. Then according to iii), it's equal to $2 <x - p, p - z> = 2\lambda <x - p, p -y> + \lambda^2||y - p||^2 - ||p - z||^2 =  2\lambda <x - p, p -y> + \lambda^2||y - p||^2 -||\lambda (p - y)||^2 = 2\lambda <x - p, p -y> $. Therefore, by induction method, if we assume $<x - p, p -y> \geq 0$, then $<x - p, p - z> \geq 0$.\\
+	
+	\item(7.6)\\
+	Let $x, y \in \{ x \in \mathbb{R}^{n}| f(x) \leq c\}$, since $f$ is a convex function, $f(\lambda x + (1 - \lambda) y) \leq \lambda f(x) + (1 - \lambda) f(y) \leq \lambda c + (1 - \lambda) c = c$. Therefore, $\lambda x + (1 - \lambda) y \in \{ x \in \mathbb{R}^{n}| f(x) \leq c\} $\\
+
+	\item(7.7)\\
+	For $x, y \in C$, since $f_{i}$ is convex function, $f(\lambda x + (1 - \lambda) y) = \sum_{i =  1}^{k}\lambda_{i}f_{i}(\lambda x + (1 - \lambda) y) \leq  \sum_{i =  1}^{k}\lambda_{i}(\lambda f_{i}(x) + (1 - \lambda)f_{i}(y)) = \lambda f(x) + (1 - \lambda) f(y)$. Therefore, the function is convex.\\
+
+	\item(7.13)\\
+	If f is not constant, W.L.O.G., $f(a) < f(b)$ for $a < b$. For $c > b$, since the epigraph is also convex, $f(c) \leq f(a) + (c - a)\frac{f(b) - f(a)}{b - a}$. When c goes to inifinity, then f cannot be bounded above. Therefore f has to be a constant function.\\
+
+	
+	
+
+\end{enumerate}
+
+\vspace{25mm}
+
+
+
+\end{document}
