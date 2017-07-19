@@ -1,0 +1,178 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in}
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\footnotesize\textsl{OSM Lab, Summer 2017, ECON, DSGE \#1}}
+\cfoot{}
+\rfoot{\footnotesize\textsl{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{float,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=red,urlcolor=blue,citecolor=red}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{section}
+\bibliographystyle{aer}
+\newcommand\ve{\varepsilon}
+\newcommand\boldline{\arrayrulewidth{1pt}\hline}
+
+\begin{document}
+
+\begin{flushleft}
+   \textbf{\large{ECON, DSGE\#1}} \\[5pt]
+   OSM Lab instructor, Kerk Phillips\\[5pt]
+   OSM Lab student, CHEN Anhua\\[5pt]
+   Due Wednesday, July 21 at 8:00am
+\end{flushleft}
+
+\vspace{5mm}
+
+
+\begin{enumerate}
+	\item(Exercise 1)\\
+	Through substituting $K_{t + 1}$ and $K_{t + 2}$ by $Ae^{z_{t}}K_{t}^{\alpha}$ and  $Ae^{z_{t + 1}}K_{t + 1}^{\alpha}$, we can find that $A = \alpha \beta$\\
+
+	
+	\item(Exercise 2)\\
+	\begin{equation} \label{eq1}
+	\begin{split}
+	\text{Budget cosntraint:} \quad c_{t} = (1 - \tau)[w_{t}l_{t} + (r_{t} - \delta)k_{t}] + k_{t} + T_{t} - k_{t + 1}\\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq2}
+	\begin{split}
+	\text{Intertemporal Euler:} \quad \frac{1}{c_{t}} = \beta E_{t}\{  \frac{1}{c_{t + 1}}[(r_{t + 1} - \delta)(1 - \tau) + 1]\} \\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq3}
+	\begin{split}
+	\text{Consumption-leisurel Euler:} \quad \frac{\alpha}{1 - l_{t}} = \frac{1}{c_{t}}w_{t} (1 - \tau) \\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq4}
+	\begin{split}
+	\text{Capital FOC:} \quad r_{t} = \alpha e^{z_{t}}k_{t}^{\alpha - 1}l_{t}^{1 - \alpha} \\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq5}
+	\begin{split}
+	\text{Labor FOC:} \quad w_{t} = (1 - \alpha) e^{z_{t}}k_{t}^{\alpha}l_{t}^{ - \alpha} \\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq6}
+	\begin{split}
+	\text{Government budget:} \quad \tau[w_{t}l_{t} + (r_{t} - \delta)k_{t}] = T_{t}  \\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq7}
+	\begin{split}
+	\text{Law of motions:} \quad z_{t} = (1 - \rho_{z})\bar{z} + \rho_{z}z_{t - 1} + \epsilon_{t}^{z} \\
+	\end{split}
+	\end{equation}
+
+	\item(Exercise 3)\\
+	
+	\item(Exercise 4)\\
+
+	\item(Exercise 5)\\
+	\begin{equation} \label{eq1}
+	\begin{split}
+	\text{Budget cosntraint:} \quad c_{t} = (1 - \tau)[w_{t}l_{t} + (r_{t} - \delta)k_{t}] + k_{t} + T_{t} - k_{t + 1}\\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq2}
+	\begin{split}
+	\text{Intertemporal Euler:} \quad c_{t}^{-\gamma} = \beta E_{t}\{  c_{t + 1}^{-\gamma}[(r_{t + 1} - \delta)(1 - \tau) + 1]\} \\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq3}
+	\begin{split}
+	\text{Capital FOC:} \quad r_{t} = \alpha k_{t}^{\alpha - 1} (l_{t}e^{z_{t}})^{1 - \alpha} \\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq4}
+	\begin{split}
+	\text{Labor FOC:} \quad w_{t} = (1 - \alpha)k_{t}^{\alpha} l_{t}^{- \alpha} e^{z_{t}(1 - \alpha)} \\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq5}
+	\begin{split}
+	\text{Government budget:} \quad \tau[w_{t}l_{t} + (r_{t} - \delta)k_{t}] = T_{t}  \\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq6}
+	\begin{split}
+	\text{Law of motions:} \quad z_{t} = (1 - \rho_{z})\bar{z} + \rho_{z}z_{t - 1} + \epsilon_{t}^{z} \\
+	\end{split}
+	\end{equation}
+	If $l_{t} = 1$, then the steady state version of these equations will be: \\
+	\begin{equation} \label{eq1}
+	\begin{split}
+	\text{Budget cosntraint:} \quad \bar{c} = (1 - \tau)[\bar{w} + (\bar{r} - \delta)\bar{k}] + \bar{T}\\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq2}
+	\begin{split}
+	\text{Intertemporal Euler:} \quad \bar{c}^{-\gamma} = \beta E\{  \bar{c}^{-\gamma}[(\bar{r} - \delta)(1 - \tau) + 1]\} \\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq3}
+	\begin{split}
+	\text{Capital FOC:} \quad \bar{r} = \alpha \bar{k}^{\alpha - 1} e^{\bar{z}(1 - \alpha)} \\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq4}
+	\begin{split}
+	\text{Labor FOC:} \quad \bar{w} = (1 - \alpha)\bar{k}^{\alpha} e^{\bar{z}(1 - \alpha)} \\
+	\end{split}
+	\end{equation}
+	\begin{equation} \label{eq5}
+	\begin{split}
+	\text{Government budget:} \quad \tau[\bar{w} + (\bar{r} - \delta)\bar{k}] = \bar{T}  \\
+	\end{split}
+	\end{equation}
+	When being solved algebrically, $\bar{k} =\alpha^{\frac{1}{1 - \alpha}}(\frac{1}{1 - \tau}(\frac{1}{\beta} - 1) + \delta)^{\frac{1}{\alpha - 1}} e^{\bar{z}}$. Taking the value given in the question, we get $\bar{k} = 0.00919466769781$\\
+	
+
+\end{enumerate}
+
+\vspace{25mm}
+
+
+
+\end{document}
