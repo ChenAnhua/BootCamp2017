@@ -94,10 +94,21 @@
 	\item(6.11)\\
 	By using the Newton method, $q(x) = f(x_{0}) + f^{'}(x_{0})(x - x_{0}) + \frac{1}{2}f^{''}(x_{0})(x - x_{0})^{2} = ax_{0}^2 + bx_{0} + c +(2ax_{0} + b)(x - x_{0}) + a(x - x_{0})^{2} = zx^2 + bx +c$. Therefore, the minimizer of $q(x)$ coincides with that of the orignial funciton and the optimization problem will be done in one iteration.\\
 
+$s_{L} = \frac{wL}{PY}$\\
+
+$s_{K_{j}}  = \frac{ R_{j}P_{j}K_{j}}{PY}$
+
+$\alpha_{L} = s_{L} $ \\
+
+$ \alpha_{K_{j}}  = (1 -  s_{L}) \frac{R_{j}P_{j}K_{j}}{\sum R_{j}P_{j}K_{j}}$\\
+	
+$\alpha_{L} =  \frac{s_{L}}{s_{L} + \sum s_{K_{j}}} $ \\
+
+$\alpha_{K_{j}}=  \frac{s_{K_{j}}}{s_{L} + \sum s_{K_{j}}} $ \\
+	
+$\frac{s_{\pi}}{s_{L} + \sum s_{K_{j}}} =  \mu $\\
 
 
-	
-	
 
 \end{enumerate}
 
